@@ -47,20 +47,45 @@ sudo apt-get install docker-ce
 ```bash
 sudo usermod -aG docker ${USER}
 ```
-
-9. Log out and back in for this to take effect.
-
-10. To ensure Docker starts when your system boots, enable it:
+9. To ensure Docker starts when your system boots, enable it:
 ```bash
 sudo systemctl enable docker
 ```
 
-11. Reboot your computer
+10. Log out and back in if you've added your user to the Docker group.
 
-12. Verify that Docker is installed correctly by running the hello-world image:
+11. Verify that Docker is installed correctly by running the hello-world image:
 ```bash
 docker run hello-world
 ```
 Result:
+```bash
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c1ec31eb5944: Pull complete 
+Digest: sha256:ac69084025c660510933cca701f615283cdbb3aa0963188770b54c31c8962493
+Status: Downloaded newer image for hello-world:latest
 
-With these steps, Docker should be successfully installed and ready to use on your Ubuntu 22.04.3 system. Remember to log out and back in if you've added your user to the Docker group.
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+
+With these steps, Docker should be successfully installed and ready to use on your Ubuntu 22.04.3 system.
